@@ -1,19 +1,28 @@
 # jsMessageGenerator
 
+A program to return a random response using JavaScript.  The random response will be in the form of a brewery announcing the launch of a new beer they have produced.
+
 ## Table of Contents
 
-1. Introduction
-2. Technology
+1. Technology
+2. Code Description
 3. Launch
+4. Purpose
 
-### Introduction
+### Technologies
 
-This is a random message generating program, built as my first portfolio piece whilst completeing the Full Stack Engineer course on Codecademy.  Upon running the program, it will "create" a new beer with a random name, from a random brewery, and containing a random selection of hops in the ingredient list.
+Node
+Javascript
+Git
 
-### Technology
+### Code Description
 
-This program will be written in JavaScript in the Visual Studio Code environment.  It will be version checked with Git, and launched on GitHub.  Arrays will be used to store all of the random possibilities of brewery name, beer name, and hop varieties.  A function will be written that combines a random selection from each array into a message, styled as a message anouncing the launch of a new beer.
+The code running this program is pretty basic.  It consists of one object, "randomMessage", containing three arrays with the possible random bits of information in, methods to select a random index from each array, and the message generating method that will return a random message.
 
 ### Launch
 
-On launching the program, the user will be presented with a random message, generated on launch.  To run the program again, it will need to be closed and re-booted.
+To run this program, execute the following command in the terminal.  "node messageScript.js"
+
+### Purpose
+
+This program is intended as a portfolio piece, the first portfolio piece created as part of the Codecademy Full Stack Engineer course.  Whilst the code itself is quite simple, this exercise was intended more to enable me to become comfortable working in my own development environment, and to become familiar with using git version control, and GitHub.
