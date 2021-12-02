@@ -1,16 +1,35 @@
 //Random Message Generator
 //A program by Ed Hampton, to generate an announcement notice about a randomly generated exciting new craft beer!
 
-//Three arrays from which the randomness shall be realised.
-const breweries = [];
-const beerNames = [];
-const hops = [];
+//Object containing libraries for random phrase generation, and methods to generate a random results from them.
+const randomMessage = {
+    libraries: {  //Libraries of random brewery names, beer names, and types of hops.
+        breweries: ["Golden Dragon Brewery", "Organum", "Rushmouth Craft Beer Co.", "Hengist & Horsa Brewery", "Hackington Ales"],
+        beerNames: ["The Monster never breathes!", "New World IPA", "King Ethelbert", "Mr Puffer", "Bepis Juice", "Project Mooze", "No. 18", "Batch 04:17", "Old Ale, revamp", "Lamplight Porter", "White Lion Pale", "Hop-Pile", "Brown Owl"],
+        hops: ["Archer", "Amarillo", "Bramling Cross", "Cascade", "Citra", "Columbus", "Chinook", "Centennial", "Calypso", "Fuggles", "Goldings", "Moutueka", "Simcoe", "Sterling"],
+    },
+    getRandomBrewery() { //Generates a random brewery name from the available list
+        const brewery = this.libraries.breweries;
+        const randomIndex = Math.floor(Math.random() * brewery.length);
+        return(brewery[randomIndex]);
+    },
+    getRandomBeerName() {  //Generates a random beer name from the available list
+        const name = this.libraries.beerNames;
+        const randomIndex = Math.floor(Math.random() * name.length);
+        return(name[randomIndex]);
+    },
+    getRandomHop() {  //Generates a random Hop choice from the available list
+        const hop = this.libraries.hops;
+        const randomIndex = Math.floor(Math.random() * hop.length)
+        return (hop[randomIndex]);
+    },
+    generateMessage() {  //Compiles the random message
+        const message = `We, the staff of ${this.getRandomBrewery()} are pleased to announce the launch of our latest beer, ${this.getRandomBeerName()}.  Brewed with only the finest ${this.getRandomHop()} hops, we think we've made something really special. We hope you enjoy it!`;
+        return message;
+    },
+};
 
-//Functions to pull random information from the above arrays for the message generator
-const brewery = breweries => {};
-const newBeer = beerNames => {};
-const hopVarieties = hops => {};
+//The instruction to generate a random message. 
+console.log(randomMessage.generateMessage());
 
-//The Random Message
-const announcement = `We, the brewers at ${brewery} are excited to announce the launch of our newest beer, ${newBeer}.  Brewed with ${hopVarieties} hops, we think you're going to really enjoy it!`;
-return announcement;
+//Ed Hampton, 2/12/2021
